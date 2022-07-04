@@ -1,0 +1,36 @@
+footer {
+  margin-block: 3rem;
+  div.social-media {
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li {
+        a {
+          font-size: 1.75rem;
+          color: #6f2232;
+          &:hover {
+            color: var(--hover);
+            transition: color 0.15s ease-in-out;
+          }
+        }
+        & + li {
+          margin-left: 3rem;
+        }
+      }
+    }
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+  div.credit {
+    text-align: center;
+    a {
+      color: #4e4e50;
+      text-decoration: none;
+      &:hover {
+        color: var(--hover);
+      }
+    }
+  }
+}

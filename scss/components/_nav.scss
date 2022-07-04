@@ -1,0 +1,131 @@
+menu {
+  i {
+    float: right;
+    font-size: 3rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    &:hover {
+      color: #ff3333;
+      transition: all 0.25s ease-in-out;
+    }
+    transition: transform 0.5s ease-in-out;
+  }
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+nav {
+  &.horizontal,
+  &.vertical {
+    background-color: var(--theme-nav);
+    color: var(--theme-nav-font);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 2;
+  }
+  @media (max-width: 768px) {
+    &.horizontal {
+      position: absolute;
+      height: 100vh;
+      top: 0;
+      opacity: 0.9;
+      & > div {
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.5s ease-in-out;
+        overflow-y: hidden;
+      }
+    }
+    &.vertical {
+      position: absolute;
+      bottom: -50px;
+    }
+  }
+  i.close {
+    font-size: 2rem;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    &:hover {
+      color: #ff3333;
+    }
+    @media (min-width: 551px) {
+      display: none;
+    }
+  }
+  .avatar-logo {
+    img {
+      width: 70px;
+      aspect-ratio: 1;
+      display: inline;
+      vertical-align: middle;
+      border-radius: 15px;
+      @media (min-width: 768px) {
+        width: 80px;
+      }
+      @media (min-width: 1024px) {
+        width: 121px;
+      }
+    }
+  }
+  .links {
+    display: flex;
+    @media (max-width: 550px) {
+      flex-direction: column;
+    }
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      text-decoration: none;
+      color: var(--theme-nav-font);
+      font-weight: 400;
+      font-size: 1rem;
+      padding: 0.75rem;
+      &:hover {
+        color: #7db5af;
+        border-radius: 15px;
+        transition: all 0.25s ease-out;
+        box-shadow: 0 0.5em 0.5em -0.4em #7db5af;
+        transform: translateY(-0.25em);
+      }
+      &:active {
+        transform: translateY(0);
+        box-shadow: initial;
+      }
+    }
+  }
+  .icon {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--theme-icon);
+    i:hover {
+      transition: all 0.25s ease-out;
+      color: #ff3333;
+      box-shadow: 0 0.5em 0.5em -0.4em #ff3333;
+      transform: translateY(-0.25em);
+    }
+    @media (min-width: 768px) {
+      display: initial;
+      i {
+        font-size: 2rem;
+        & + i {
+          margin: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+.show {
+  transform: translateX(0);
+}
+
+.hide {
+  transform: translateX(150%);
+}

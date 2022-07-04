@@ -1,0 +1,157 @@
+body {
+  font-family: "Akshar", sans-serif;
+  // background: rgb(37, 37, 37);
+  // background: linear-gradient(
+  //   309deg,
+  //   rgba(37, 37, 37, 1) 0%,
+  //   rgba(0, 95, 101, 1) 30%,
+  //   rgba(0, 113, 120, 1) 34%,
+  //   rgba(0, 180, 191, 1) 100%
+  // );
+  background-color: var(--background-color);
+  background-attachment: fixed;
+  //font-family: 'Roboto', sans-serif;
+  //font-family: 'Space Mono', monospace;
+}
+
+.dark-mode {
+  position: fixed;
+  right: 2rem;
+  top: 6rem;
+  font-size: 2rem;
+  i {
+    cursor: pointer;
+    &:hover {
+      color: var(--hover);
+    }
+  }
+}
+
+.mobile-logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 3.5rem;
+  animation: rotate 1.75s ease-in-out infinite;
+  aspect-ratio: 1;
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+main {
+  color: var(--font);
+  clear: right;
+  border: 1px solid;
+  @media (min-width: 769px) {
+    width: 85vw;
+    margin-inline: auto;
+    margin-top: calc(68px + 0.5rem);
+  }
+  & > div + div {
+    margin-block: 3.5rem;
+  }
+}
+.about-me {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  height: 100vh;
+  border: 1px solid yellow;
+  .intro {
+    margin-bottom: 2rem;
+    .greet {
+      color: white;
+      h1 {
+        mix-blend-mode: difference;
+      }
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 33%;
+        height: 100%;
+        background-color: white;
+        top: 0;
+        z-index: -1;
+        color: black;
+        animation: negative-slider 5s linear infinite;
+        box-shadow: 0px 0px 40px 10px gray;
+        border-radius: 50%;
+      }
+    }
+    strong {
+      color: var(--icon);
+    }
+    h1 {
+      font-size: 3rem;
+      font-family: "Shadows Into Light", cursive;
+      font-weight: bold;
+      width: 100%;
+      @media (min-width: 768px) {
+        font-size: 8rem;
+      }
+    }
+    p {
+      font-size: 2rem;
+      color: #4e4e50;
+    }
+  }
+  img {
+    border: 5px dotted;
+    width: 20rem;
+    border-radius: 50%;
+    aspect-ratio: 1;
+  }
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+}
+
+.my_portfolio {
+  border: 1px solid green;
+  h2 {
+    font-size: 3rem;
+  }
+  p {
+    line-height: 1.4;
+  }
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.modal {
+  position: fixed;
+  overflow: hidden;
+}
+
+.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@keyframes negative-slider {
+  0% {
+    left: 0;
+    border-radius: 0 40px 40px 0;
+  }
+  25% {
+    border-radius: 40px;
+  }
+  50% {
+    left: 67%;
+    border-radius: 40px 0 0 40px;
+  }
+  75% {
+    border-radius: 40px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0 40px 40px 0;
+  }
+}

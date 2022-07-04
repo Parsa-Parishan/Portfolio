@@ -1,0 +1,54 @@
+.my_portfolio {
+  p {
+    margin-bottom: 2rem;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.25rem;
+    margin-bottom: 2em;
+    span {
+      position: relative;
+      overflow: hidden;
+      .preview {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        position: absolute;
+        inset: 0 0 0 0;
+        z-index: 3;
+        transform: translateX(-100%);
+        i {
+          font-size: 2rem;
+          color: powderblue;
+          transform: translateY(130px);
+          &:hover {
+            color: #77c9d4;
+          }
+        }
+        a {
+          text-decoration: none;
+          color: #e3e8e8;
+          border: 1px solid transparent;
+          border-radius: 10px;
+          padding: 5px;
+          &:hover {
+            color: #ff3333;
+            border: 1px solid #ff3333;
+            transition: border 0.25s linear;
+          }
+        }
+      }
+      &:hover .preview {
+        background-color: rgba(#000000, 0.5);
+        transform: translateX(0);
+        transition: all 0.25s ease-in-out;
+      }
+      &:hover i {
+        transform: translateX(0);
+        transition: transform 0.2s ease-in-out 0.3s;
+      }
+    }
+  }
+}
