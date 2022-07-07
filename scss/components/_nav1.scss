@@ -70,8 +70,8 @@ menu {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    top: -1rem;
-    background: rgba(gray, 0.3);
+    top: 0;
+    background: rgba(var(--background-color), 0.3);
     opacity: 0;
     display: none;
 
@@ -81,10 +81,11 @@ menu {
       position: absolute;
       width: 50vw;
       height: 100vh;
+      top: 0;
       right: 0;
       flex-direction: column;
       justify-content: space-evenly;
-      background: #4e4e50;
+      background: rgba(var(--background-color), );
       transform: translateX(100%);
       transition: all 0.2s ease-in-out;
       img {
@@ -137,6 +138,7 @@ menu {
 .show {
   opacity: 1;
   display: block;
+  backdrop-filter: blur(15px);
   // .horizontal-container {
   //   transform: translateX(0);
   // }

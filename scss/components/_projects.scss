@@ -33,10 +33,10 @@
           border: 1px solid transparent;
           border-radius: 10px;
           padding: 5px;
-          &:hover {
-            color: #ff3333;
-            border: 1px solid #ff3333;
-            transition: border 0.25s linear;
+          transition: all 0.25s ease-in-out;
+          &:nth-child(2):hover {
+            border: 1px solid red;
+            border-radius: 10px;
           }
         }
       }
